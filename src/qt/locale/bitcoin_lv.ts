@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Izvēlies adresi uz kuru sūtīt qtums</translation>
+        <translation>Izvēlies adresi uz kuru sūtīt vuicashs</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Izvēlies adresi ar kuru saņemt qtums</translation>
+        <translation>Izvēlies adresi ar kuru saņemt vuicashs</translation>
     </message>
     <message>
         <source>C&amp;hoose</source>
@@ -270,8 +270,8 @@
         <translation>Ciļņu rīkjosla</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Pieprasīt maksājumus (izveido QR kodu un qtum: URIs)</translation>
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
+        <translation>Pieprasīt maksājumus (izveido QR kodu un vuicash: URIs)</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -528,7 +528,7 @@
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>Ieslēgt qtum &amp;kontroles funkcijas</translation>
+        <translation>Ieslēgt vuicash &amp;kontroles funkcijas</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -1197,7 +1197,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Error loading block database</source>
         <translation>Kļūda ielādējot bloku datubāzi</translation>

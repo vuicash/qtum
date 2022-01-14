@@ -24,7 +24,7 @@
 #include <util/system.h>
 #include <net.h>
 #include <key_io.h>
-#include <qtum/qtumledger.h>
+#include <vuicash/vuicashledger.h>
 #ifdef ENABLE_WALLET
 #include <wallet/wallet.h>
 #endif
@@ -257,18 +257,18 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
 
     }
 
-    //////////////////////////////////////////////////////// qtum
-    VuiCashDGP qtumDGP(globalState.get(), fGettingValuesDGP);
-    globalSealEngine->setVuiCashSchedule(qtumDGP.getGasSchedule(nHeight));
-    uint32_t blockSizeDGP = qtumDGP.getBlockSize(nHeight);
-    minGasPrice = qtumDGP.getMinGasPrice(nHeight);
+    //////////////////////////////////////////////////////// vuicash
+    VuiCashDGP vuicashDGP(globalState.get(), fGettingValuesDGP);
+    globalSealEngine->setVuiCashSchedule(vuicashDGP.getGasSchedule(nHeight));
+    uint32_t blockSizeDGP = vuicashDGP.getBlockSize(nHeight);
+    minGasPrice = vuicashDGP.getMinGasPrice(nHeight);
     if(gArgs.IsArgSet("-staker-min-tx-gas-price")) {
         CAmount stakerMinGasPrice;
         if(ParseMoney(gArgs.GetArg("-staker-min-tx-gas-price", ""), stakerMinGasPrice)) {
             minGasPrice = std::max(minGasPrice, (uint64_t)stakerMinGasPrice);
         }
     }
-    hardBlockGasLimit = qtumDGP.getBlockGasLimit(nHeight);
+    hardBlockGasLimit = vuicashDGP.getBlockGasLimit(nHeight);
     softBlockGasLimit = gArgs.GetArg("-staker-soft-block-gas-limit", hardBlockGasLimit);
     softBlockGasLimit = std::min(softBlockGasLimit, hardBlockGasLimit);
     txGasLimit = gArgs.GetArg("-staker-max-tx-gas-limit", softBlockGasLimit);
@@ -408,7 +408,7 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateEmptyBlock(const CScript& 
         pblock->prevoutStake.n=0;
     }
 
-    //////////////////////////////////////////////////////// qtum
+    //////////////////////////////////////////////////////// vuicash
     //state shouldn't change here for an empty block, but if it's not valid it'll fail in CheckBlock later
     pblock->hashStateRoot = uint256(h256Touint(dev::h256(globalState->rootHash())));
     pblock->hashUTXORoot = uint256(h256Touint(dev::h256(globalState->rootHashUTXO())));
@@ -503,31 +503,31 @@ bool BlockAssembler::AttemptToAddContractToBlock(CTxMemPool::txiter iter, uint64
         LogPrintf("AttemptToAddContractToBlock(): Fail to extract contacts from tx %s\n", iter->GetTx().GetHash().ToString());
         return false;
     }
-    std::vector<VuiCashTransaction> qtumTransactions = resultConverter.first;
+    std::vector<VuiCashTransaction> vuicashTransactions = resultConverter.first;
     dev::u256 txGas = 0;
-    for(VuiCashTransaction qtumTransaction : qtumTransactions){
-        txGas += qtumTransaction.gas();
+    for(VuiCashTransaction vuicashTransaction : vuicashTransactions){
+        txGas += vuicashTransaction.gas();
         if(txGas > txGasLimit) {
             // Limit the tx gas limit by the soft limit if such a limit has been specified.
             LogPrintf("AttemptToAddContractToBlock(): The gas needed is bigger than -staker-max-tx-gas-limit for the contract tx %s\n", iter->GetTx().GetHash().ToString());
             return false;
         }
 
-        if(bceResult.usedGas + qtumTransaction.gas() > softBlockGasLimit){
+        if(bceResult.usedGas + vuicashTransaction.gas() > softBlockGasLimit){
             // If this transaction's gasLimit could cause block gas limit to be exceeded, then don't add it
             // Log if the contract is the only contract tx
             if(bceResult.usedGas == 0)
                 LogPrintf("AttemptToAddContractToBlock(): The gas needed is bigger than -staker-soft-block-gas-limit for the contract tx %s\n", iter->GetTx().GetHash().ToString());
             return false;
         }
-        if(qtumTransaction.gasPrice() < minGasPrice){
+        if(vuicashTransaction.gasPrice() < minGasPrice){
             //if this transaction's gasPrice is less than the current DGP minGasPrice don't add it
             LogPrintf("AttemptToAddContractToBlock(): The gas price is less than -staker-min-tx-gas-price for the contract tx %s\n", iter->GetTx().GetHash().ToString());
             return false;
         }
     }
     // We need to pass the DGP's block gas limit (not the soft limit) since it is consensus critical.
-    ByteCodeExec exec(*pblock, qtumTransactions, hardBlockGasLimit, ::ChainActive().Tip());
+    ByteCodeExec exec(*pblock, vuicashTransactions, hardBlockGasLimit, ::ChainActive().Tip());
     if(!exec.performByteCode()){
         //error, don't add contract
         globalState->setRoot(oldHashStateRoot);
@@ -1032,8 +1032,8 @@ public:
         {
             // Get delegations from events
             std::vector<DelegationEvent> events;
-            qtumDelegations.FilterDelegationEvents(events, *this);
-            delegations_staker = qtumDelegations.DelegationsFromEvents(events);
+            vuicashDelegations.FilterDelegationEvents(events, *this);
+            delegations_staker = vuicashDelegations.DelegationsFromEvents(events);
         }
         else
         {
@@ -1042,23 +1042,23 @@ public:
             if(cacheHeight < cpsHeight)
             {
                 std::vector<DelegationEvent> events;
-                qtumDelegations.FilterDelegationEvents(events, *this, cacheHeight, cpsHeight);
-                qtumDelegations.UpdateDelegationsFromEvents(events, cacheDelegationsStaker);
+                vuicashDelegations.FilterDelegationEvents(events, *this, cacheHeight, cpsHeight);
+                vuicashDelegations.UpdateDelegationsFromEvents(events, cacheDelegationsStaker);
                 cacheHeight = cpsHeight;
             }
 
             // Update the wallet delegations
             std::vector<DelegationEvent> events;
-            qtumDelegations.FilterDelegationEvents(events, *this, cacheHeight + 1);
+            vuicashDelegations.FilterDelegationEvents(events, *this, cacheHeight + 1);
             delegations_staker = cacheDelegationsStaker;
-            qtumDelegations.UpdateDelegationsFromEvents(events, delegations_staker);
+            vuicashDelegations.UpdateDelegationsFromEvents(events, delegations_staker);
         }
         pwallet->updateDelegationsStaker(delegations_staker);
     }
 
 private:
     CWallet *pwallet;
-    VuiCashDelegation qtumDelegations;
+    VuiCashDelegation vuicashDelegations;
     int32_t cacheHeight;
     std::map<uint160, Delegation> cacheDelegationsStaker;
     std::vector<uint160> allowList;
@@ -1102,8 +1102,8 @@ public:
             {
                 // Get delegations from events
                 std::vector<DelegationEvent> events;
-                qtumDelegations.FilterDelegationEvents(events, *this);
-                pwallet->m_my_delegations = qtumDelegations.DelegationsFromEvents(events);
+                vuicashDelegations.FilterDelegationEvents(events, *this);
+                pwallet->m_my_delegations = vuicashDelegations.DelegationsFromEvents(events);
             }
             else
             {
@@ -1112,16 +1112,16 @@ public:
                 if(cacheHeight < cpsHeight)
                 {
                     std::vector<DelegationEvent> events;
-                    qtumDelegations.FilterDelegationEvents(events, *this, cacheHeight, cpsHeight);
-                    qtumDelegations.UpdateDelegationsFromEvents(events, cacheMyDelegations);
+                    vuicashDelegations.FilterDelegationEvents(events, *this, cacheHeight, cpsHeight);
+                    vuicashDelegations.UpdateDelegationsFromEvents(events, cacheMyDelegations);
                     cacheHeight = cpsHeight;
                 }
 
                 // Update the wallet delegations
                 std::vector<DelegationEvent> events;
-                qtumDelegations.FilterDelegationEvents(events, *this, cacheHeight + 1);
+                vuicashDelegations.FilterDelegationEvents(events, *this, cacheHeight + 1);
                 pwallet->m_my_delegations = cacheMyDelegations;
-                qtumDelegations.UpdateDelegationsFromEvents(events, pwallet->m_my_delegations);
+                vuicashDelegations.UpdateDelegationsFromEvents(events, pwallet->m_my_delegations);
             }
         }
         else
@@ -1155,7 +1155,7 @@ public:
                 {
                     Delegation delegation;
                     uint160 address = item.first;
-                    if(qtumDelegations.GetDelegation(address, delegation) && VuiCashDelegation::VerifyDelegation(address, delegation))
+                    if(vuicashDelegations.GetDelegation(address, delegation) && VuiCashDelegation::VerifyDelegation(address, delegation))
                     {
                         cacheMyDelegations[address] = delegation;
                     }
@@ -1187,7 +1187,7 @@ public:
 private:
 
     CWallet *pwallet;
-    VuiCashDelegation qtumDelegations;
+    VuiCashDelegation vuicashDelegations;
     int32_t cacheHeight;
     int32_t cacheAddressHeight;
     std::map<uint160, Delegation> cacheMyDelegations;
@@ -1360,7 +1360,7 @@ public:
 
     {
         // Make this thread recognisable as the mining thread
-        std::string threadName = "qtumstake";
+        std::string threadName = "vuicashstake";
         if(pwallet && pwallet->GetName() != "")
         {
             threadName = threadName + "-" + pwallet->GetName();

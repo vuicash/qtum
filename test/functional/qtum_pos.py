@@ -10,7 +10,7 @@ from test_framework.mininode import *
 from test_framework.blocktools import *
 from test_framework.address import *
 from test_framework.key import ECKey
-from test_framework.qtumconfig import TIMESTAMP_MASK
+from test_framework.vuicashconfig import TIMESTAMP_MASK
 import io
 import struct
 

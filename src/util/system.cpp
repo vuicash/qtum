@@ -73,7 +73,7 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "qtum.conf";
+const char * const BITCOIN_CONF_FILENAME = "vuicash.conf";
 
 ArgsManager gArgs;
 
@@ -560,7 +560,7 @@ fs::path GetDefaultDataDir()
     // Windows < Vista: C:\Documents and Settings\Username\Application Data\VuiCash
     // Windows >= Vista: C:\Users\Username\AppData\Roaming\VuiCash
     // Mac: ~/Library/Application Support/VuiCash
-    // Unix: ~/.qtum
+    // Unix: ~/.vuicash
 #ifdef WIN32
     // Windows
     return GetSpecialFolderPath(CSIDL_APPDATA) / "VuiCash";
@@ -576,7 +576,7 @@ fs::path GetDefaultDataDir()
     return pathRet / "Library/Application Support/VuiCash";
 #else
     // Unix
-    return pathRet / ".qtum";
+    return pathRet / ".vuicash";
 #endif
 #endif
 }

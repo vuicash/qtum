@@ -5,9 +5,9 @@
 #include <libdevcore/FixedHash.h>
 
 /**
- * qtumutils Provides utility functions to EVM for functionalities that already exist in qtum
+ * vuicashutils Provides utility functions to EVM for functionalities that already exist in vuicash
  */
-namespace qtumutils
+namespace vuicashutils
 {
 /**
  * @brief btc_ecrecover Wrapper to CPubKey::RecoverCompact

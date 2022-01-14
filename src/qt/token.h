@@ -4,7 +4,7 @@
 #include <vector>
 #include <map>
 #include <uint256.h>
-#include <qtum/qtumtoken.h>
+#include <vuicash/vuicashtoken.h>
 
 struct TokenData;
 class WalletModel;

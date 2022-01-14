@@ -269,7 +269,7 @@
         <translation>输入此钱包的旧密码和新密码。</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your qtums from being stolen by malware infecting your computer.</source>
+        <source>Remember that encrypting your wallet cannot fully protect your vuicashs from being stolen by malware infecting your computer.</source>
         <translation>请注意，当您的计算机感染恶意软件时，加密钱包并不能完全规避您的QTUM被偷窃的可能。</translation>
     </message>
     <message>
@@ -367,8 +367,8 @@
         <translation type="unfinished">接收(&amp;R)</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation type="unfinished">请求支付 (生成二维码和 qtum: URI)</translation>
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
+        <translation type="unfinished">请求支付 (生成二维码和 vuicash: URI)</translation>
     </message>
     <message>
         <source>Smart &amp;Contracts</source>
@@ -531,8 +531,8 @@
         <translation type="unfinished">接收地址</translation>
     </message>
     <message>
-        <source>Open a qtum: URI</source>
-        <translation>打开qtum:开头的URI</translation>
+        <source>Open a vuicash: URI</source>
+        <translation>打开vuicash:开头的URI</translation>
     </message>
     <message>
         <source>Show the list of used receiving addresses and labels</source>
@@ -1289,7 +1289,7 @@
         <translation type="unfinished">合约的字节码</translation>
     </message>
     <message>
-        <source>The qtum address that will be used to create the contract.</source>
+        <source>The vuicash address that will be used to create the contract.</source>
         <translation type="unfinished">用于创造合约的VuiCash地址</translation>
     </message>
     <message>
@@ -1606,11 +1606,11 @@
         <translation>表单</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the vuicash network, as detailed below.</source>
         <translation>近期交易可能尚未显示，因此当前余额可能不准确。以上信息将在与QTUM网络完全同步后更正。详情如下</translation>
     </message>
     <message>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend vuicashs that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>尝试使用受未可见交易影响的余额将不被网络接受。</translation>
     </message>
     <message>
@@ -1678,7 +1678,7 @@ Please make sure to keep an updated antivirus and operating system. We can not r
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open qtum URI</source>
+        <source>Open vuicash URI</source>
         <translation>打开QTUM URI</translation>
     </message>
     <message>
@@ -2145,8 +2145,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>要求付款时发生错误</translation>
     </message>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
-        <translation>无法启动 qtum 协议的“
+        <source>Cannot start vuicash: click-to-pay handler</source>
+        <translation>无法启动 vuicash 协议的“
 一键支付”处理器</translation>
     </message>
     <message>
@@ -2154,8 +2154,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>URI 处理</translation>
     </message>
     <message>
-        <source>&apos;qtum://&apos; is not a valid URI. Use &apos;qtum:&apos; instead.</source>
-        <translation type="vanished">‘qtum://’不是合法的URI。请使用&apos;qtum:&apos;作为替代。</translation>
+        <source>&apos;vuicash://&apos; is not a valid URI. Use &apos;vuicash:&apos; instead.</source>
+        <translation type="vanished">‘vuicash://’不是合法的URI。请使用&apos;vuicash:&apos;作为替代。</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.</source>
@@ -2182,8 +2182,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation>付款请求的网络类型跟客户端不符。</translation>
     </message>
     <message>
-        <source>&apos;qtum://&apos; is not a valid URI. Use &apos;qtum:&apos; instead.</source>
-        <translation type="unfinished">qtum://不是一个有效URL，请使用qtum:</translation>
+        <source>&apos;vuicash://&apos; is not a valid URI. Use &apos;vuicash:&apos; instead.</source>
+        <translation type="unfinished">vuicash://不是一个有效URL，请使用vuicash:</translation>
     </message>
 </context>
 <context>
@@ -2572,8 +2572,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation type="vanished">分页工具栏</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation type="vanished">请求支付 (生成二维码和 qtum: URI)</translation>
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
+        <translation type="vanished">请求支付 (生成二维码和 vuicash: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -2652,8 +2652,8 @@ Please make sure to keep an updated antivirus and operating system. We can not r
         <translation type="vanished">收款地址(&amp;R)</translation>
     </message>
     <message>
-        <source>Open a qtum: URI</source>
-        <translation>打开qtum:开头的URI</translation>
+        <source>Open a vuicash: URI</source>
+        <translation>打开vuicash:开头的URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -3533,7 +3533,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation>隐藏交易手续费设置</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for vuicash transactions than the network can process.</source>
         <translation type="vanished">当交易量小于可用区块空间时，矿工和中继节点可能会执行最低手续费率限制。按照这个最低费率来支付手续费也是可以的，但请注意，一旦交易需求超出QTUM网络能处理的限度，你的交易可能永远也无法确认。</translation>
     </message>
     <message>
@@ -3747,7 +3747,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="unfinished">如果费用设置为1000聪且转账只有250字节，则每KB只支付250聪作为费用，而总花费至少为1000聪。对于大于1KB的转账，按KB计费。</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for qtum transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for vuicash transactions than the network can process.</source>
         <translation type="unfinished">当交易量小于可用区块空间时，矿工和中继节点可能会执行最低手续费率限制。按照这个最低费率来支付手续费也是可以的，但请注意，一旦交易需求超出QTUM网络能处理的限度，你的交易可能永远也无法确认。</translation>
     </message>
 </context>
@@ -3794,7 +3794,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation>用被选单位表示的待发送金额</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less qtums than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less vuicashs than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation>交易费将从发送总额中扣除。接收人将收到比您在金额框中输入的更少的QTUM。如果选中了多个收件人，交易费平分。</translation>
     </message>
     <message>
@@ -3822,8 +3822,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation>请为此地址输入一个标签以将它加入用过的地址列表</translation>
     </message>
     <message>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the VuiCash network.</source>
-        <translation>qtum:URI 附带的备注信息，将会和交易一起存储，备查。 注意：该消息不会通过QTUM网络传输。</translation>
+        <source>A message that was attached to the vuicash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the VuiCash network.</source>
+        <translation>vuicash:URI 附带的备注信息，将会和交易一起存储，备查。 注意：该消息不会通过QTUM网络传输。</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -3913,7 +3913,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation type="unfinished">要发送的QTUM数量。默认为0。</translation>
     </message>
     <message>
-        <source>The qtum address that will be used as sender.</source>
+        <source>The vuicash address that will be used as sender.</source>
         <translation type="unfinished">将作为发送者的QTUM地址</translation>
     </message>
     <message>
@@ -4054,7 +4054,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
         <translation>签名消息(&amp;S)</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive qtums sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive vuicashs sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation>您可以用你的地址对消息/协议进行签名，以证明您可以接收发送到该地址的QTUM。注意不要对任何模棱两可或者随机的消息进行签名，以免遭受钓鱼式攻击。请确保消息内容准确的表达了您的真实意愿。</translation>
     </message>
     <message>
@@ -5667,7 +5667,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation type="vanished">在MIT协议下分发，参见附带的 %s 文件或 %s</translation>

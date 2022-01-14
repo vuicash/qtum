@@ -23,7 +23,7 @@ struct LedgerDevice
 };
 
 /**
- * @brief The VuiCashLedger class Communicate with the qtum ledger
+ * @brief The VuiCashLedger class Communicate with the vuicash ledger
  */
 class VuiCashLedger {
     

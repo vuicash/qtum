@@ -597,7 +597,7 @@
 <context>
     <name>PaymentServer</name>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
+        <source>Cannot start vuicash: click-to-pay handler</source>
         <translation>VuiCash incipere non potest: cliccare-ad-pensandum handler</translation>
     </message>
     <message>
@@ -1337,7 +1337,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
         <translation>Hoc est prae-dimittum experimentala aedes - utere eo periculo tuo proprio - nolite utere fodendo vel applicationibus mercatoriis</translation>

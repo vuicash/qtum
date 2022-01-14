@@ -68,9 +68,9 @@ UniValue CallToContract(const UniValue& params)
 
     dev::Address senderAddress;
     if(params.size() >= 3){
-        CTxDestination qtumSenderAddress = DecodeDestination(params[2].get_str());
-        if (IsValidDestination(qtumSenderAddress)) {
-            const PKHash *keyid = boost::get<PKHash>(&qtumSenderAddress);
+        CTxDestination vuicashSenderAddress = DecodeDestination(params[2].get_str());
+        if (IsValidDestination(vuicashSenderAddress)) {
+            const PKHash *keyid = boost::get<PKHash>(&vuicashSenderAddress);
             senderAddress = dev::Address(HexStr(valtype(keyid->begin(),keyid->end())));
         }else{
             senderAddress = dev::Address(params[2].get_str());

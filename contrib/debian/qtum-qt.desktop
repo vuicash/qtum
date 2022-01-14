@@ -2,11 +2,11 @@
 Version=0.17.6
 Name=VuiCash Core
 Comment=Connect to the VuiCash P2P Network
-Exec=qtum-qt %u
+Exec=vuicash-qt %u
 Terminal=false
 Type=Application
-Icon=qtum128
-MimeType=x-scheme-handler/qtum;
+Icon=vuicash128
+MimeType=x-scheme-handler/vuicash;
 Categories=Network;
 StartupWMClass=VuiCash-qt
-Name[en_US]=qtum-qt
+Name[en_US]=vuicash-qt

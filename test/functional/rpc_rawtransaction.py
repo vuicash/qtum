@@ -23,8 +23,8 @@ from test_framework.util import (
     connect_nodes,
     hex_str_to_bytes,
 )
-from test_framework.qtumconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
-from test_framework.qtum import generatesynchronized
+from test_framework.vuicashconfig import COINBASE_MATURITY, INITIAL_BLOCK_REWARD
+from test_framework.vuicash import generatesynchronized
 
 class multidict(dict):
     """Dictionary that allows duplicate keys.

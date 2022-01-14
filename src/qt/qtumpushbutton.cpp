@@ -1,4 +1,4 @@
-#include "qtumpushbutton.h"
+#include "vuicashpushbutton.h"
 #include <QStylePainter>
 
 VuiCashPushButton::VuiCashPushButton(QWidget *parent):

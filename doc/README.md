@@ -5,7 +5,7 @@ Setup
 ---------------------
 VuiCash Core is the original VuiCash client and it builds the backbone of the network. It downloads and, by default, stores the entire history of VuiCash transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download VuiCash Core, visit [qtumcore.org](https://www.qtumcore.org/).
+To download VuiCash Core, visit [vuicashcore.org](https://www.vuicashcore.org/).
 
 Running
 ---------------------
@@ -15,12 +15,12 @@ The following are some helpful notes on how to run VuiCash Core on your native p
 
 Unpack the files into a directory and run:
 
-- `bin/qtum-qt` (GUI) or
-- `bin/qtumd` (headless)
+- `bin/vuicash-qt` (GUI) or
+- `bin/vuicashd` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run qtum-qt.exe.
+Unpack the files into a directory, and then run vuicash-qt.exe.
 
 ### macOS
 

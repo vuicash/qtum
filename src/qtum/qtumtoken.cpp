@@ -1,4 +1,4 @@
-﻿#include <qtum/qtumtoken.h>
+﻿#include <vuicash/vuicashtoken.h>
 #include <validation.h>
 #include <util/moneystr.h>
 #include <util/contractabi.h>
@@ -96,10 +96,10 @@ struct VuiCashTokenData
 
 bool VuiCashToken::ToHash160(const std::string& strVuiCashAddress, std::string& strHash160)
 {
-    CTxDestination qtumAddress = DecodeDestination(strVuiCashAddress);
-    if(!IsValidDestination(qtumAddress))
+    CTxDestination vuicashAddress = DecodeDestination(strVuiCashAddress);
+    if(!IsValidDestination(vuicashAddress))
         return false;
-    const PKHash * keyid = boost::get<PKHash>(&qtumAddress);
+    const PKHash * keyid = boost::get<PKHash>(&vuicashAddress);
     if(keyid){
         strHash160 = HexStr(valtype(keyid->begin(),keyid->end()));
     }else{
@@ -112,9 +112,9 @@ bool VuiCashToken::ToVuiCashAddress(const std::string& strHash160, std::string& 
 {
     uint160 key(ParseHex(strHash160.c_str()));
     PKHash keyid(key);
-    CTxDestination qtumAddress = keyid;
-    if(IsValidDestination(qtumAddress)){
-        strVuiCashAddress = EncodeDestination(qtumAddress);
+    CTxDestination vuicashAddress = keyid;
+    if(IsValidDestination(vuicashAddress)){
+        strVuiCashAddress = EncodeDestination(vuicashAddress);
         return true;
     }
     return false;

@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-#define QTUM_RELEASES "https://github.com/vuicash/qtum/releases"
+#define QTUM_RELEASES "https://github.com/vuicash/vuicash/releases"
 
 class Version {
 

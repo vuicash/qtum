@@ -24,7 +24,7 @@ make
 make install # optional
 ```
 
-This will build qtum-qt as well, if the dependencies are met.
+This will build vuicash-qt as well, if the dependencies are met.
 
 Dependencies
 ---------------------
@@ -105,7 +105,7 @@ ZMQ dependencies (provides ZMQ API):
 
 GUI dependencies:
 
-If you want to build qtum-qt, make sure that the required packages for Qt development
+If you want to build vuicash-qt, make sure that the required packages for Qt development
 are installed. Qt 5 is necessary to build the GUI.
 To build without GUI pass `--without-gui`.
 
@@ -117,7 +117,7 @@ libqrencode (optional) can be installed with:
 
     sudo apt-get install libqrencode-dev
 
-Once these are installed, they will be found by configure and a qtum-qt executable will be
+Once these are installed, they will be found by configure and a vuicash-qt executable will be
 built by default.
 
 
@@ -161,7 +161,7 @@ To build with Qt 5 (recommended) you need the following:
 
 Notes
 -----
-The release is built with GCC and then "strip qtumd" to strip the debug
+The release is built with GCC and then "strip vuicashd" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 
@@ -224,7 +224,7 @@ Hardening enables the following features:
 
     To test that you have built PIE executable, install scanelf, part of paxutils, and use:
 
-    	scanelf -e ./qtum
+    	scanelf -e ./vuicash
 
     The output should contain:
 
@@ -238,7 +238,7 @@ Hardening enables the following features:
     executable without the non-executable stack protection.
 
     To verify that the stack is non-executable after compiling use:
-    `scanelf -e ./qtum`
+    `scanelf -e ./vuicash`
 
     The output should contain:
 	STK/REL/PTL
@@ -269,8 +269,8 @@ Setup and Build Example: Arch Linux
 This example lists the steps necessary to setup and build a command line only, non-wallet distribution of the latest changes on Arch Linux:
     
     pacman -S git base-devel boost libevent python gmp
-    git clone https://github.com/vuicash/qtum --recursive
-    cd qtum/
+    git clone https://github.com/vuicash/vuicash --recursive
+    cd vuicash/
     ./autogen.sh
     ./configure --disable-wallet --without-gui --without-miniupnpc
     make check

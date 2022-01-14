@@ -227,68 +227,68 @@ BASE_SCRIPTS = [
     # Don't append tests at the end to avoid merge conflicts
     # Put them in a random line within the section that fits their approximate run-time
 
-    # qtum
-    'qtum_dgp.py',
-    'qtum_pos.py',
-    'qtum_opcall.py',
-    'qtum_opcreate.py',
-    'qtum_8mb_block.py',
-    'qtum_gas_limit.py',
-    'qtum_searchlog.py',
-    'qtum_pos_segwit.py',
-    'qtum_state_root.py',
-    'qtum_evm_globals.py',
-    'qtum_null_sender.py',
-    'qtum_waitforlogs.py',
-    'qtum_block_header.py',
-    'qtum_callcontract.py',
-    'qtum_spend_op_call.py',
-    'qtum_condensing_txs.py',
-    'qtum_createcontract.py',
-    'qtum_sendtocontract.py',
-    'qtum_identical_refunds.py',
-    'qtum_create_eth_op_code.py',
-    'qtum_gas_limit_overflow.py',
-    'qtum_call_empty_contract.py',
-    'qtum_dgp_block_size_sync.py',
-    'qtum_pos_conflicting_txs.py',
-    'qtum_globals_state_changer.py',
-    'qtum_no_exec_call_disabled.py',
-    'qtum_soft_block_gas_limits.py',
-    'qtum_dgp_block_size_restart.py',
-    'qtum_searchlog_restart_node.py',
-    'qtum_immature_coinstake_spend.py',
-    'qtum_transaction_prioritization.py',
-    'qtum_assign_mpos_fees_to_gas_refund.py',
-    'qtum_ignore_mpos_participant_reward.py',
-    'qtum_evm_constantinople_activation.py',
-    'qtum_many_value_refunds_from_same_tx.py',
-    'qtum_combined_outputs_exceed_gas_limit.py',
-    'qtum_dgp_gas_price_lingering_mempool_tx.py',
-    'qtum_dgp_gas_schedule.py',
-    'qtum_header_spam.py --dos-same-height',
-    'qtum_header_spam.py --dos-variable-height',
-    'qtum_header_spam.py --run-standard-tests',
-    'qtum_divergence_dos.py',
-    'qtum_prioritize_create_over_call.py',
-    'qtum_callcontract_timestamp.py',
-    'qtum_transaction_receipt_origin_contract_address.py',
-    'qtum_block_number_corruption.py',
-    'qtum_duplicate_stake.py',
-    'qtum_rpc_bitcore.py',
-    'qtum_faulty_header_chain.py',
-    'qtum_signrawsender.py',
-    'qtum_op_sender.py',
-    'qtum_evm_revert.py',
-    'qtum_evm_create2.py',
-    'qtum_evm_staticcall.py',
-    'qtum_evm_constantinople_precompiles.py',
-    'qtum_evm_constantinople_opcodes.py',
-    'qtum_block_index_cleanup.py',
-    'qtum_pod.py',
-    'qtum_simple_delegation_contract.py',
-    'qtum_delegation_contract.py',
-    'qtum_qrc20.py'
+    # vuicash
+    'vuicash_dgp.py',
+    'vuicash_pos.py',
+    'vuicash_opcall.py',
+    'vuicash_opcreate.py',
+    'vuicash_8mb_block.py',
+    'vuicash_gas_limit.py',
+    'vuicash_searchlog.py',
+    'vuicash_pos_segwit.py',
+    'vuicash_state_root.py',
+    'vuicash_evm_globals.py',
+    'vuicash_null_sender.py',
+    'vuicash_waitforlogs.py',
+    'vuicash_block_header.py',
+    'vuicash_callcontract.py',
+    'vuicash_spend_op_call.py',
+    'vuicash_condensing_txs.py',
+    'vuicash_createcontract.py',
+    'vuicash_sendtocontract.py',
+    'vuicash_identical_refunds.py',
+    'vuicash_create_eth_op_code.py',
+    'vuicash_gas_limit_overflow.py',
+    'vuicash_call_empty_contract.py',
+    'vuicash_dgp_block_size_sync.py',
+    'vuicash_pos_conflicting_txs.py',
+    'vuicash_globals_state_changer.py',
+    'vuicash_no_exec_call_disabled.py',
+    'vuicash_soft_block_gas_limits.py',
+    'vuicash_dgp_block_size_restart.py',
+    'vuicash_searchlog_restart_node.py',
+    'vuicash_immature_coinstake_spend.py',
+    'vuicash_transaction_prioritization.py',
+    'vuicash_assign_mpos_fees_to_gas_refund.py',
+    'vuicash_ignore_mpos_participant_reward.py',
+    'vuicash_evm_constantinople_activation.py',
+    'vuicash_many_value_refunds_from_same_tx.py',
+    'vuicash_combined_outputs_exceed_gas_limit.py',
+    'vuicash_dgp_gas_price_lingering_mempool_tx.py',
+    'vuicash_dgp_gas_schedule.py',
+    'vuicash_header_spam.py --dos-same-height',
+    'vuicash_header_spam.py --dos-variable-height',
+    'vuicash_header_spam.py --run-standard-tests',
+    'vuicash_divergence_dos.py',
+    'vuicash_prioritize_create_over_call.py',
+    'vuicash_callcontract_timestamp.py',
+    'vuicash_transaction_receipt_origin_contract_address.py',
+    'vuicash_block_number_corruption.py',
+    'vuicash_duplicate_stake.py',
+    'vuicash_rpc_bitcore.py',
+    'vuicash_faulty_header_chain.py',
+    'vuicash_signrawsender.py',
+    'vuicash_op_sender.py',
+    'vuicash_evm_revert.py',
+    'vuicash_evm_create2.py',
+    'vuicash_evm_staticcall.py',
+    'vuicash_evm_constantinople_precompiles.py',
+    'vuicash_evm_constantinople_opcodes.py',
+    'vuicash_block_index_cleanup.py',
+    'vuicash_pod.py',
+    'vuicash_simple_delegation_contract.py',
+    'vuicash_delegation_contract.py',
+    'vuicash_qrc20.py'
 ]
 
 # Place EXTENDED_SCRIPTS first since it has the 3 longest running tests
@@ -439,7 +439,7 @@ def run_tests(*, test_list, src_dir, build_dir, tmpdir, jobs=1, enable_coverage=
     # Warn if bitcoind is already running
     # pidof might fail or return an empty string if bitcoind is not running
     try:
-        if subprocess.check_output(["pidof", "qtumd"]) not in [b'']:
+        if subprocess.check_output(["pidof", "vuicashd"]) not in [b'']:
             print("%sWARNING!%s There is already a bitcoind process running on this system. Tests may fail unexpectedly due to resource contention!" % (BOLD[1], BOLD[0]))
     except (OSError, subprocess.SubprocessError):
         pass
@@ -672,7 +672,7 @@ class TestResult():
 def check_script_prefixes():
     """Check that test scripts start with one of the allowed name prefixes."""
 
-    good_prefixes_re = re.compile("^(example|feature|interface|mempool|mining|p2p|rpc|wallet|tool|framework_test|qtum)_")
+    good_prefixes_re = re.compile("^(example|feature|interface|mempool|mining|p2p|rpc|wallet|tool|framework_test|vuicash)_")
     bad_script_names = [script for script in ALL_SCRIPTS if good_prefixes_re.match(script) is None]
 
     if bad_script_names:

@@ -1,4 +1,4 @@
-#include <qtum/qtumledger.h>
+#include <vuicash/vuicashledger.h>
 #include <util/system.h>
 #include <chainparams.h>
 #include <univalue.h>
@@ -93,7 +93,7 @@ bool isPyPath(const std::string& str)
 }
 #endif
 
-// Start process from qtumd
+// Start process from vuicashd
 class CProcess
 {
 public:

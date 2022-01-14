@@ -13,8 +13,8 @@ from test_framework.util import (
     connect_nodes,
     assert_raises_rpc_error
 )
-from test_framework.qtumconfig import COINBASE_MATURITY
-from test_framework.qtum import generatesynchronized
+from test_framework.vuicashconfig import COINBASE_MATURITY
+from test_framework.vuicash import generatesynchronized
 
 class WalletHDTest(BitcoinTestFramework):
     def set_test_params(self):

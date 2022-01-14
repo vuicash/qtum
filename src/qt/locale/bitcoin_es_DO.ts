@@ -340,7 +340,7 @@
         <translation>Barra de pestañas</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
         <translation>Solicitar pagos (genera codigo QR y URL's de VuiCash)</translation>
     </message>
     <message>
@@ -867,8 +867,8 @@
         <translation>Error en petición de pago</translation>
     </message>
     <message>
-        <source>Cannot start qtum: click-to-pay handler</source>
-        <translation>No se pudo iniciar qtum: manejador de pago-al-clic</translation>
+        <source>Cannot start vuicash: click-to-pay handler</source>
+        <translation>No se pudo iniciar vuicash: manejador de pago-al-clic</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1887,7 +1887,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
         <translation>Esta es una versión de pre-prueba - utilícela bajo su propio riesgo. No la utilice para usos comerciales o de minería.</translation>

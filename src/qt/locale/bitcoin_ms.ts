@@ -357,7 +357,7 @@ Alihkan fail data ke dalam tab semasa</translation>
     </message>
     <message>
         <source>Sign messages with your VuiCash addresses to prove you own them</source>
-        <translation>sahkan mesej bersama alamat qtum anda untuk menunjukkan alamat ini anda punya</translation>
+        <translation>sahkan mesej bersama alamat vuicash anda untuk menunjukkan alamat ini anda punya</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified VuiCash addresses</source>
@@ -381,8 +381,8 @@ Alihkan fail data ke dalam tab semasa</translation>
 </translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>Request payments (generates QR codes and qtum: URIs)
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
+        <translation>Request payments (generates QR codes and vuicash: URIs)
 </translation>
     </message>
     <message>
@@ -650,7 +650,7 @@ Alihkan fail data ke dalam tab semasa</translation>
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     <message>
         <source>Loading wallet...</source>
         <translation>Sedang baca wallet...</translation>

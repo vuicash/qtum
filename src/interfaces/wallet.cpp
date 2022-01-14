@@ -22,7 +22,7 @@
 #include <wallet/rpcwallet.h>
 #include <wallet/wallet.h>
 #include <key_io.h>
-#include <qtum/qtumdelegation.h>
+#include <vuicash/vuicashdelegation.h>
 #include <miner.h>
 
 #include <memory>
@@ -645,7 +645,7 @@ public:
         LOCK(m_wallet->cs_wallet);
         return m_wallet->GetCredit(txout, filter);
     }
-    bool isUnspentAddress(const std::string &qtumAddress) override
+    bool isUnspentAddress(const std::string &vuicashAddress) override
     {
         auto locked_chain = m_wallet->chain().lock();
         LOCK(m_wallet->cs_wallet);
@@ -658,7 +658,7 @@ public:
             const CScript& scriptPubKey = out.tx->tx->vout[out.i].scriptPubKey;
             bool fValidAddress = ExtractDestination(scriptPubKey, address);
 
-            if(fValidAddress && EncodeDestination(address) == qtumAddress && out.tx->tx->vout[out.i].nValue)
+            if(fValidAddress && EncodeDestination(address) == vuicashAddress && out.tx->tx->vout[out.i].nValue)
             {
                 return true;
             }
@@ -1007,10 +1007,10 @@ public:
             if(keyID)
             {
                 uint160 address(*keyID);
-                contractRet = m_qtumDelegation.ExistDelegationContract() ? m_qtumDelegation.GetDelegation(address, delegation) : false;
+                contractRet = m_vuicashDelegation.ExistDelegationContract() ? m_vuicashDelegation.GetDelegation(address, delegation) : false;
                 if(contractRet)
                 {
-                    validated = m_qtumDelegation.VerifyDelegation(address, delegation);
+                    validated = m_vuicashDelegation.VerifyDelegation(address, delegation);
                     info.staker_address = EncodeDestination(PKHash(delegation.staker));
                     info.fee = delegation.fee;
                     info.block_number = delegation.blockHeight;
@@ -1072,10 +1072,10 @@ public:
         if(keyID)
         {
             uint160 address(*keyID);
-            details.c_contract_return = m_qtumDelegation.ExistDelegationContract() ? m_qtumDelegation.GetDelegation(address, delegation) : false;
+            details.c_contract_return = m_vuicashDelegation.ExistDelegationContract() ? m_vuicashDelegation.GetDelegation(address, delegation) : false;
             if(details.c_contract_return)
             {
-                details.c_entry_exist = m_qtumDelegation.VerifyDelegation(address, delegation);
+                details.c_entry_exist = m_vuicashDelegation.VerifyDelegation(address, delegation);
                 details.c_delegate_address = sAddress;
                 details.c_staker_address = EncodeDestination(PKHash(delegation.staker));
                 details.c_fee = delegation.fee;
@@ -1543,7 +1543,7 @@ public:
     }
 
     std::shared_ptr<CWallet> m_wallet;
-    VuiCashDelegation m_qtumDelegation;
+    VuiCashDelegation m_vuicashDelegation;
 };
 
 class WalletClientImpl : public ChainClient

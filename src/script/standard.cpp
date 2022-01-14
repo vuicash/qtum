@@ -9,9 +9,9 @@
 #include <pubkey.h>
 #include <script/script.h>
 
-#include <qtum/qtumstate.h>
-#include <qtum/qtumDGP.h>
-#include <qtum/qtumtransaction.h>
+#include <vuicash/vuicashstate.h>
+#include <vuicash/vuicashDGP.h>
+#include <vuicash/vuicashtransaction.h>
 #include <validation.h>
 #include <streams.h>
 
@@ -199,7 +199,7 @@ txnouttype Solver(const CScript& scriptPubKey, std::vector<std::vector<unsigned 
                 else
                     break;
             }
-            /////////////////////////////////////////////////////////// qtum
+            /////////////////////////////////////////////////////////// vuicash
             else if (opcode2 == OP_VERSION)
             {
                 if(0 <= opcode1 && opcode1 <= OP_PUSHDATA4)

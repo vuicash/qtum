@@ -86,7 +86,7 @@ public:
 };
 
 /**
- * @brief The VuiCashDelegation class Communicate with the qtum delegation contract
+ * @brief The VuiCashDelegation class Communicate with the vuicash delegation contract
  */
 class VuiCashDelegation {
     

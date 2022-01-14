@@ -100,9 +100,9 @@ static int AppInitRawTx(int argc, char* argv[])
 
     if (argc < 2 || HelpRequested(gArgs)) {
         // First part of help message is specific to this utility
-        std::string strUsage = PACKAGE_NAME " qtum-tx utility version " + FormatFullVersion() + "\n\n" +
-            "Usage:  qtum-tx [options] <hex-tx> [commands]  Update hex-encoded qtum transaction\n" +
-            "or:     qtum-tx [options] -create [commands]   Create hex-encoded qtum transaction\n" +
+        std::string strUsage = PACKAGE_NAME " vuicash-tx utility version " + FormatFullVersion() + "\n\n" +
+            "Usage:  vuicash-tx [options] <hex-tx> [commands]  Update hex-encoded vuicash transaction\n" +
+            "or:     vuicash-tx [options] -create [commands]   Create hex-encoded vuicash transaction\n" +
             "\n";
         strUsage += gArgs.GetHelpMessage();
 

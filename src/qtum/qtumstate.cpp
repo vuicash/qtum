@@ -3,7 +3,7 @@
 #include <validation.h>
 #include <chainparams.h>
 #include <script/script.h>
-#include <qtum/qtumstate.h>
+#include <vuicash/vuicashstate.h>
 #include <libevm/VMFace.h>
 
 using namespace std;
@@ -12,7 +12,7 @@ using namespace dev::eth;
 
 VuiCashState::VuiCashState(u256 const& _accountStartNonce, OverlayDB const& _db, const string& _path, BaseState _bs) :
         State(_accountStartNonce, _db, _bs) {
-            dbUTXO = VuiCashState::openDB(_path + "/qtumDB", sha3(rlp("")), WithExisting::Trust);
+            dbUTXO = VuiCashState::openDB(_path + "/vuicashDB", sha3(rlp("")), WithExisting::Trust);
 	        stateUTXO = SecureTrieDB<Address, OverlayDB>(&dbUTXO);
 }
 
@@ -84,7 +84,7 @@ ResultExecute VuiCashState::execute(EnvInfo const& _envInfo, SealEngineFace cons
                 printfErrorLog(res.excepted);
             }
 
-            qtum::commit(cacheUTXO, stateUTXO, m_cache);
+            vuicash::commit(cacheUTXO, stateUTXO, m_cache);
             cacheUTXO.clear();
             bool removeEmptyAccounts = _envInfo.number() >= _sealEngine.chainParams().EIP158ForkBlock;
             commit(removeEmptyAccounts ? State::CommitBehaviour::RemoveEmptyAccounts : State::CommitBehaviour::KeepEmptyAccounts);
@@ -180,7 +180,7 @@ Vin* VuiCashState::vin(dev::Address const& _addr)
 //     if (_commitBehaviour == CommitBehaviour::RemoveEmptyAccounts)
 //         removeEmptyAccounts();
 
-//     qtum::commit(cacheUTXO, stateUTXO, m_cache);
+//     vuicash::commit(cacheUTXO, stateUTXO, m_cache);
 //     cacheUTXO.clear();
         
 //     m_touched += dev::eth::commit(m_cache, m_state);

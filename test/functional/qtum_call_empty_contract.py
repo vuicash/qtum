@@ -8,7 +8,7 @@ from test_framework.util import *
 from test_framework.script import *
 from test_framework.mininode import *
 
-from test_framework.qtum import generatesynchronized
+from test_framework.vuicash import generatesynchronized
 import sys
 
 class VuiCashCallContractStateNotRevertedTest(BitcoinTestFramework):

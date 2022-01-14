@@ -31,7 +31,7 @@
 #include <wallet/coincontrol.h>
 #include <wallet/fees.h>
 #include <miner.h>
-#include <qtum/qtumledger.h>
+#include <vuicash/vuicashledger.h>
 
 #include <algorithm>
 #include <assert.h>

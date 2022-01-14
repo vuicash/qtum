@@ -338,8 +338,8 @@
         <translation>說明 &amp;H</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and qtum: URIs)</source>
-        <translation>要求付款 (產生QR碼 qtum: URIs)</translation>
+        <source>Request payments (generates QR codes and vuicash: URIs)</source>
+        <translation>要求付款 (產生QR碼 vuicash: URIs)</translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -647,6 +647,6 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     </context>
 </TS>

@@ -109,7 +109,7 @@ static const char* DEFAULT_ASMAP_FILENAME="ip_asn.map";
 /**
  * The PID file facilities.
  */
-static const char* BITCOIN_PID_FILENAME = "qtumd.pid";
+static const char* BITCOIN_PID_FILENAME = "vuicashd.pid";
 
 static fs::path GetPidFile()
 {
@@ -189,7 +189,7 @@ void Shutdown(NodeContext& node)
     /// for example if the data directory was found to be locked.
     /// Be sure that anything that writes files or flushes caches only does this if the respective
     /// module was initialized.
-    util::ThreadRename("qtum-shutoff");
+    util::ThreadRename("vuicash-shutoff");
 
 #ifdef ENABLE_WALLET
     // Force stop the stakers before any other components
@@ -634,7 +634,7 @@ void SetupServerArgs()
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/vuicash/qtum>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/vuicash/vuicash>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i").translated, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
@@ -1500,7 +1500,7 @@ bool AppInitMain(NodeContext& node)
                 LogInstance().m_file_path.string()));
     }
 
-////////////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////////////// // vuicash
     dev::g_logPost(std::string("\n\n\n\n\n\n\n\n\n\n"), NULL);
 //////////////////////////////////////////////////////////////////////
 
@@ -1916,7 +1916,7 @@ bool AppInitMain(NodeContext& node)
                 break;
             }
 
-                /////////////////////////////////////////////////////////// qtum
+                /////////////////////////////////////////////////////////// vuicash
                 if((gArgs.IsArgSet("-dgpstorage") && gArgs.IsArgSet("-dgpevm")) || (!gArgs.IsArgSet("-dgpstorage") && gArgs.IsArgSet("-dgpevm")) ||
                   (!gArgs.IsArgSet("-dgpstorage") && !gArgs.IsArgSet("-dgpevm"))){
                     fGettingValuesDGP = true;
@@ -1925,16 +1925,16 @@ bool AppInitMain(NodeContext& node)
                 }
 
                 dev::eth::NoProof::init();
-                fs::path qtumStateDir = GetDataDir() / "stateVuiCash";
-                bool fStatus = fs::exists(qtumStateDir);
-                const std::string dirVuiCash(qtumStateDir.string());
+                fs::path vuicashStateDir = GetDataDir() / "stateVuiCash";
+                bool fStatus = fs::exists(vuicashStateDir);
+                const std::string dirVuiCash(vuicashStateDir.string());
                 const dev::h256 hashDB(dev::sha3(dev::rlp("")));
                 dev::eth::BaseState existsVuiCashstate = fStatus ? dev::eth::BaseState::PreExisting : dev::eth::BaseState::Empty;
                 globalState = std::unique_ptr<VuiCashState>(new VuiCashState(dev::u256(0), VuiCashState::openDB(dirVuiCash, hashDB, dev::WithExisting::Trust), dirVuiCash, existsVuiCashstate));
                 dev::eth::ChainParams cp(chainparams.EVMGenesisInfo());
                 globalSealEngine = std::unique_ptr<dev::eth::SealEngineFace>(cp.createSealEngine());
 
-                pstorageresult.reset(new StorageResults(qtumStateDir.string()));
+                pstorageresult.reset(new StorageResults(vuicashStateDir.string()));
                 if (fReset) {
                     pstorageresult->wipeResults();
                 }
@@ -1954,7 +1954,7 @@ bool AppInitMain(NodeContext& node)
                 fIsVMlogFile = fs::exists(GetDataDir() / "vmExecLogs.json");
                 ///////////////////////////////////////////////////////////
 
-                /////////////////////////////////////////////////////////////// // qtum
+                /////////////////////////////////////////////////////////////// // vuicash
                 if (fAddressIndex != gArgs.GetBoolArg("-addrindex", DEFAULT_ADDRINDEX)) {
                     strLoadError = _("You need to rebuild the database using -reindex to change -addrindex").translated;
                     break;
@@ -1988,8 +1988,8 @@ bool AppInitMain(NodeContext& node)
             try {
                 LOCK(cs_main);
 
-                VuiCashDGP qtumDGP(globalState.get(), fGettingValuesDGP);
-                globalSealEngine->setVuiCashSchedule(qtumDGP.getGasSchedule(::ChainActive().Height() + (::ChainActive().Height()+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1) ));
+                VuiCashDGP vuicashDGP(globalState.get(), fGettingValuesDGP);
+                globalSealEngine->setVuiCashSchedule(vuicashDGP.getGasSchedule(::ChainActive().Height() + (::ChainActive().Height()+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1) ));
 
                 if (!is_coinsview_empty) {
                     uiInterface.InitMessage(_("Verifying blocks...").translated);

@@ -30,7 +30,7 @@
 #include <util/system.h> // for GetBoolArg
 #include <wallet/coincontrol.h>
 #include <wallet/wallet.h> // for CRecipient
-#include <qt/qtumhwitool.h>
+#include <qt/vuicashhwitool.h>
 
 #include <stdint.h>
 

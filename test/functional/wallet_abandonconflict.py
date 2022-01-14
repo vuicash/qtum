@@ -20,8 +20,8 @@ from test_framework.util import (
     disconnect_nodes,
     wait_until,
 )
-from test_framework.qtumconfig import *
-from test_framework.qtum import generatesynchronized
+from test_framework.vuicashconfig import *
+from test_framework.vuicash import generatesynchronized
 
 class AbandonConflictTest(BitcoinTestFramework):
     def set_test_params(self):

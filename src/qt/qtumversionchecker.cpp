@@ -1,4 +1,4 @@
-#include <qt/qtumversionchecker.h>
+#include <qt/vuicashversionchecker.h>
 #include <clientversion.h>
 
 #include <QNetworkAccessManager>
@@ -8,7 +8,7 @@
 #include <QRegularExpression>
 #include <QRegularExpressionMatchIterator>
 
-#define paternVersion "qtum-([0-9]+\\.)?([0-9]+\\.)?([0-9]+)-"
+#define paternVersion "vuicash-([0-9]+\\.)?([0-9]+\\.)?([0-9]+)-"
 
 VuiCashVersionChecker::VuiCashVersionChecker(QObject *parent) : QObject(parent)
 {

@@ -6,7 +6,7 @@
 #include <qt/waitmessagebox.h>
 #include <qt/hardwarekeystoredialog.h>
 #include <qt/walletmodel.h>
-#include <qt/qtumhwitool.h>
+#include <qt/vuicashhwitool.h>
 #include <qt/guiconstants.h>
 #include <qt/guiutil.h>
 

@@ -242,7 +242,7 @@
   <customwidget>
    <class>VuiCashPushButton</class>
    <extends>QPushButton</extends>
-   <header>qt/qtumpushbutton.h</header>
+   <header>qt/vuicashpushbutton.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -161,6 +161,6 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>vuicash-core</name>
     </context>
 </TS>

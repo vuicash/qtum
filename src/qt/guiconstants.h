@@ -47,7 +47,7 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "VuiCash"
-#define QAPP_ORG_DOMAIN "qtum.org"
+#define QAPP_ORG_DOMAIN "vuicash.org"
 #define QAPP_APP_NAME_DEFAULT "VuiCash-Qt"
 #define QAPP_APP_NAME_TESTNET "VuiCash-Qt-testnet"
 #define QAPP_APP_NAME_REGTEST "VuiCash-Qt-regtest"
@@ -58,11 +58,11 @@ static constexpr uint64_t GB_BYTES{1000000000};
 // Default prune target displayed in GUI.
 static constexpr int DEFAULT_PRUNE_TARGET_GB{2};
 
-/* Mainnet qtum explorer uri */
-#define QTUM_INFO_MAINNET "<a href='https://qtum.info/%1/%2'>%2</a>"
+/* Mainnet vuicash explorer uri */
+#define QTUM_INFO_MAINNET "<a href='https://vuicash.info/%1/%2'>%2</a>"
 
-/* Testnet qtum explorer uri */
-#define QTUM_INFO_TESTNET "<a href='https://testnet.qtum.info/%1/%2'>%2</a>"
+/* Testnet vuicash explorer uri */
+#define QTUM_INFO_TESTNET "<a href='https://testnet.vuicash.info/%1/%2'>%2</a>"
 
 /* Hardware wallet interface uri */
 #define QTUM_HWI_TOOL "<a href='https://github.com/vuicash/HWI/tags'>HWI Tool</a>"

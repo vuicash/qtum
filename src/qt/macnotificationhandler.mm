@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.qtum.VuiCash-Qt";
+        return @"org.vuicash.VuiCash-Qt";
     } else {
         return [self __bundleIdentifier];
     }

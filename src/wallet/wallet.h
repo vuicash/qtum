@@ -26,7 +26,7 @@
 #include <wallet/walletutil.h>
 #include <consensus/params.h>
 #include <pos.h>
-#include <qtum/qtumdelegation.h>
+#include <vuicash/vuicashdelegation.h>
 
 #include <algorithm>
 #include <atomic>
@@ -1422,10 +1422,10 @@ public:
     /* Remove super staker entry from the wallet */
     bool RemoveSuperStakerEntry(const uint256& superStakerHash, bool fFlushOnClose=true);
 
-    /* Start staking qtums */
+    /* Start staking vuicashs */
     void StartStake(CConnman* connman = CWallet::defaultConnman);
 
-    /* Stop staking qtums */
+    /* Stop staking vuicashs */
     void StopStake();
 
     /* Is staking closing */

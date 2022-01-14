@@ -7,8 +7,8 @@ from test_framework.test_framework import BitcoinTestFramework
 from test_framework.util import *
 from test_framework.script import *
 from test_framework.mininode import *
-from test_framework.qtum import generatesynchronized
-from test_framework.qtumconfig import ENABLE_REDUCED_BLOCK_TIME
+from test_framework.vuicash import generatesynchronized
+from test_framework.vuicashconfig import ENABLE_REDUCED_BLOCK_TIME
 
 import sys
 
