@@ -47,7 +47,7 @@ public:
     VuiCashToken();
     virtual ~VuiCashToken();
 
-    void setVuiCashTokenExec(VuiCashTokenExec* tokenExec);
+    void setQtumTokenExec(VuiCashTokenExec* tokenExec);
 
     // Set command data
     void setAddress(const std::string &address);

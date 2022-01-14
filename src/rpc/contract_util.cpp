@@ -390,7 +390,7 @@ UniValue SearchLogs(const UniValue& _params)
 
 CallToken::CallToken()
 {
-    setVuiCashTokenExec(this);
+    setQtumTokenExec(this);
 }
 
 bool CallToken::execValid(const int &func, const bool &sendTo)

@@ -702,7 +702,7 @@ std::string VuiCashToken::getErrorMessage()
     return d->errorMessage;
 }
 
-void VuiCashToken::setVuiCashTokenExec(VuiCashTokenExec *tokenExec)
+void VuiCashToken::setQtumTokenExec(VuiCashTokenExec *tokenExec)
 {
     d->tokenExec = tokenExec;
 }

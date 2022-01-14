@@ -61,7 +61,7 @@ Token::Token()
     // Create new event log interface
     d->eventLog = new EventLog();
 
-    setVuiCashTokenExec(this);
+    setQtumTokenExec(this);
 }
 
 Token::~Token()
